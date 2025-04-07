@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Live Dashboard</title>
+    <!-- Include Chart.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Live Dashboard</h1>
+    <canvas id="statsChart" width="800" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('statsChart').getContext('2d');
+        var statsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Job Run Counts',
+                    data: [],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Run Count'
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart() {
+            fetch('/stats')
+                .then(response => response.json())
+                .then(data => {
+                    var keys = [];
+                    var counts = [];
+                    for (var key in data) {
+                        keys.push(key);
+                        counts.push(data[key].runs);
+                    }
+                    statsChart.data.labels = keys;
+                    statsChart.data.datasets[0].data = counts;
+                    statsChart.update();
+                });
+        }
+
+        setInterval(updateChart, 2000);
+    </script>
+</body>
+</html>

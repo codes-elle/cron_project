@@ -1,0 +1,11 @@
+Flask==2.2.5
+APScheduler==3.10.1
+watchdog==2.1.9
+psutil==5.9.4
+pyudev==0.24.3
+stats==0.1.2a0
+streamlit==1.44.1
+pandas==2.2.3
+plotly==6.0.1
+st-autorefresh==0.1.0
+streamlit-autorefresh==1.0.1
