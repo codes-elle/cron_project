@@ -8,7 +8,7 @@ lock = threading.Lock()
 
 def initialize_stats():
     """Initialize the stats file if it does not exist."""
-    if not os.path.exists(STATS_FILE):
+    if not os.path.exists("/home/mozelle/cron_project/stats.json"):
         stats = {
             # Time-based jobs
             "time_based_system_monitor": {"runs": 0, "total_duration": 0.0, "errors": 0},

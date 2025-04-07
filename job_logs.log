@@ -1493,3 +1493,40 @@
 2025-04-07 09:18:08,180 INFO: Job "ping_test (trigger: interval[0:05:00], next run at: 2025-04-07 09:23:05 EDT)" executed successfully
 2025-04-07 09:18:08,579 INFO: Job Finished: Resource Usage Trend Logger - Completed in 2.57 seconds
 2025-04-07 09:18:08,580 INFO: Job "resource_usage_trend_logger (trigger: interval[0:10:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
+2025-04-07 09:20:06,187 INFO: Running job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-07 09:24:05 EDT)" (scheduled at 2025-04-07 09:20:05.783909-04:00)
+2025-04-07 09:20:06,190 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:22:05 EDT)" (scheduled at 2025-04-07 09:20:05.783723-04:00)
+2025-04-07 09:20:06,288 INFO: Job Started: Service Health Check - Check if critical services are running - File type: N/A
+2025-04-07 09:20:06,301 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-07 09:20:06,426 INFO: Job Finished: Memory Leak Detector - Completed in 0.14 seconds
+2025-04-07 09:20:06,428 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:22:05 EDT)" executed successfully
+2025-04-07 09:20:06,778 INFO: Job Finished: Service Health Check - Completed in 0.50 seconds
+2025-04-07 09:20:06,787 INFO: Job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-07 09:24:05 EDT)" executed successfully
+2025-04-07 09:22:06,083 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:24:05 EDT)" (scheduled at 2025-04-07 09:22:05.783723-04:00)
+2025-04-07 09:22:06,116 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-07 09:22:06,146 INFO: Job Finished: Memory Leak Detector - Completed in 0.03 seconds
+2025-04-07 09:22:06,148 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:24:05 EDT)" executed successfully
+2025-04-07 09:23:05,835 INFO: Running job "run_system_monitor (trigger: interval[0:05:00], next run at: 2025-04-07 09:28:05 EDT)" (scheduled at 2025-04-07 09:23:05.777399-04:00)
+2025-04-07 09:23:05,837 INFO: Running job "ping_test (trigger: interval[0:05:00], next run at: 2025-04-07 09:28:05 EDT)" (scheduled at 2025-04-07 09:23:05.783517-04:00)
+2025-04-07 09:23:05,839 INFO: Running job "temperature_monitoring (trigger: interval[0:15:00], next run at: 2025-04-07 09:38:05 EDT)" (scheduled at 2025-04-07 09:23:05.783975-04:00)
+2025-04-07 09:23:05,839 INFO: Job Started: System Monitor - Monitor CPU, memory, disk usage, and uptime - File type: N/A
+2025-04-07 09:23:05,840 INFO: Job Started: Ping Test - Test network connectivity by pinging critical servers - File type: N/A
+2025-04-07 09:23:05,843 INFO: Job Started: Temperature Monitoring - Monitor CPU/GPU temperatures via sensors - File type: N/A
+2025-04-07 09:23:05,945 INFO: Job Finished: Temperature Monitoring - Completed in 0.10 seconds
+2025-04-07 09:23:05,946 INFO: Job "temperature_monitoring (trigger: interval[0:15:00], next run at: 2025-04-07 09:38:05 EDT)" executed successfully
+2025-04-07 09:23:06,877 INFO: Job Finished: System Monitor - Completed in 1.04 seconds
+2025-04-07 09:23:06,887 INFO: Job "run_system_monitor (trigger: interval[0:05:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
+2025-04-07 09:23:08,113 INFO: Job Finished: Ping Test - Completed in 2.27 seconds
+2025-04-07 09:23:08,114 INFO: Job "ping_test (trigger: interval[0:05:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
+2025-04-07 09:24:05,799 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:26:05 EDT)" (scheduled at 2025-04-07 09:24:05.783723-04:00)
+2025-04-07 09:24:05,800 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-07 09:24:05,800 INFO: Running job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-07 09:28:05 EDT)" (scheduled at 2025-04-07 09:24:05.783909-04:00)
+2025-04-07 09:24:05,801 INFO: Job Started: Service Health Check - Check if critical services are running - File type: N/A
+2025-04-07 09:24:05,807 INFO: Job Finished: Memory Leak Detector - Completed in 0.01 seconds
+2025-04-07 09:24:05,808 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:26:05 EDT)" executed successfully
+2025-04-07 09:24:05,880 INFO: Job Finished: Service Health Check - Completed in 0.08 seconds
+2025-04-07 09:24:05,880 INFO: Job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
+2025-04-07 09:26:06,027 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:28:05 EDT)" (scheduled at 2025-04-07 09:26:05.783723-04:00)
+2025-04-07 09:26:06,077 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-07 09:26:06,128 INFO: Job Finished: Memory Leak Detector - Completed in 0.05 seconds
+2025-04-07 09:26:06,145 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
+2025-04-07 09:27:22,486 INFO: Scheduler has been shut down
