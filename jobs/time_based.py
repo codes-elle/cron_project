@@ -37,8 +37,8 @@ def daily_log_rotation():
 # 3. Automated Backup
 @log_job("Automated Backup", "Backup a critical directory as a ZIP archive")
 def automated_backup():
-    source = '/home/mozelle/important_data'   # Update to your source directory
-    destination = '/home/mozelle/backup/backup'  # Update to your backup destination (without extension)
+    source = 'important_data'   # Update to your source directory
+    destination = '/backup/backup'  # Update to your backup destination (without extension)
     shutil.make_archive(destination, 'zip', source)
     print("Automated backup completed.")
     update_stat("time_based_backup")

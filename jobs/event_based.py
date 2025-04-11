@@ -121,7 +121,7 @@ class FileEventHandler(FileSystemEventHandler):
 def start_file_watcher(path_to_watch):
     event_handler = FileEventHandler()
     observer = Observer()
-    observer.schedule(event_handler, path='/home/mozelle/cron_project/watched_directory', recursive=True)
+    observer.schedule(event_handler, path='watched_directory', recursive=True)
     observer.start()
     print(f"Started file watcher on {path_to_watch}")
     try:

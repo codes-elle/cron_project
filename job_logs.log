@@ -1530,3 +1530,297 @@
 2025-04-07 09:26:06,128 INFO: Job Finished: Memory Leak Detector - Completed in 0.05 seconds
 2025-04-07 09:26:06,145 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-07 09:28:05 EDT)" executed successfully
 2025-04-07 09:27:22,486 INFO: Scheduler has been shut down
+2025-04-11 17:12:49,373 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,380 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,380 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,381 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,382 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,382 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,382 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-11 17:12:49,384 INFO: Added job "run_system_monitor" to job store "default"
+2025-04-11 17:12:49,384 INFO: Added job "daily_log_rotation" to job store "default"
+2025-04-11 17:12:49,384 INFO: Added job "automated_backup" to job store "default"
+2025-04-11 17:12:49,384 INFO: Added job "update_check" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "security_scan" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "clean_temp" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "send_status_report" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "db_cleanup" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "ping_test" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "log_disk_usage" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "resource_usage_trend_logger" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "memory_leak_detector" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "log_file_analysis" to job store "default"
+2025-04-11 17:12:49,385 INFO: Added job "service_health_check" to job store "default"
+2025-04-11 17:12:49,386 INFO: Added job "temperature_monitoring" to job store "default"
+2025-04-11 17:12:49,386 INFO: Scheduler started
+2025-04-11 17:12:49,387 INFO: Job Started: os_directory_change - Detect changes in directory listing using os.listdir - File type: Directory
+2025-04-11 17:12:49,388 INFO: Job Started: os_file_attribute_change - Monitor file attribute changes using os.stat - File type: File
+2025-04-11 17:12:49,388 INFO: Job Started: os_disk_space - Monitor disk space using os.statvfs - File type: Disk
+2025-04-11 17:12:49,389 INFO: Job Started: os_env_change - Monitor changes to an environment variable using os.environ - File type: Env
+2025-04-11 17:14:49,608 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:16:49 EDT)" (scheduled at 2025-04-11 17:14:49.381926-04:00)
+2025-04-11 17:14:49,643 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-11 17:14:49,704 INFO: Job Finished: Memory Leak Detector - Completed in 0.06 seconds
+2025-04-11 17:14:49,711 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:16:49 EDT)" executed successfully
+2025-04-11 17:15:34,493 INFO: Job Started: File Deleted Event - Handle file deletion event - File type: File
+2025-04-11 17:15:34,516 INFO: Job Finished: File Deleted Event - Completed in 0.03 seconds
+2025-04-11 17:15:34,518 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:15:34,520 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:15:34,521 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:15:34,521 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:15:34,522 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:15:34,525 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:15:48,646 INFO: Job Started: File Deleted Event - Handle file deletion event - File type: File
+2025-04-11 17:15:48,684 INFO: Job Finished: File Deleted Event - Completed in 0.05 seconds
+2025-04-11 17:15:48,687 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:15:48,689 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:15:48,690 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:15:48,690 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:15:48,692 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:15:48,694 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,266 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:16:03,272 INFO: Job Finished: File Created Event - Completed in 0.01 seconds
+2025-04-11 17:16:03,272 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,274 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,275 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,275 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,277 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,279 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,280 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,282 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,283 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,283 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,283 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,285 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,288 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,289 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,291 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,291 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,293 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,294 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,295 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:16:03,296 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,297 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,298 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,304 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,304 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,305 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,308 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,309 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,310 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,314 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,315 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,317 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,318 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,319 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,321 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,322 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,322 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,323 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,325 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,326 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:16:03,327 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,329 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,331 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,332 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,333 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,333 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,335 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,335 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,336 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,337 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,337 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,337 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,338 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,340 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,341 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,343 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,343 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,344 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,345 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,347 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:16:03,348 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,350 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,350 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,351 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,351 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,352 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,353 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,354 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,355 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,355 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,356 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,357 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,358 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,359 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,360 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,361 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,361 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,363 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,364 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,364 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:16:03,365 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,366 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,368 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,369 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,369 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,369 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,370 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,373 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,374 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,375 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,375 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,376 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,377 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,378 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:03,379 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:03,380 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:03,380 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:03,381 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:03,382 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:16:06,839 INFO: Job Started: File Deleted Event - Handle file deletion event - File type: File
+2025-04-11 17:16:06,857 INFO: Job Finished: File Deleted Event - Completed in 0.02 seconds
+2025-04-11 17:16:06,858 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:16:06,860 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:16:06,861 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:16:06,862 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:16:06,867 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:16:06,891 INFO: Job Finished: Keyword Alert - Completed in 0.02 seconds
+2025-04-11 17:16:49,677 INFO: Running job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-11 17:20:49 EDT)" (scheduled at 2025-04-11 17:16:49.382102-04:00)
+2025-04-11 17:16:49,660 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:18:49 EDT)" (scheduled at 2025-04-11 17:16:49.381926-04:00)
+2025-04-11 17:16:49,693 INFO: Job Started: Service Health Check - Check if critical services are running - File type: N/A
+2025-04-11 17:16:49,694 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-11 17:16:49,761 INFO: Job Finished: Memory Leak Detector - Completed in 0.07 seconds
+2025-04-11 17:16:49,763 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:18:49 EDT)" executed successfully
+2025-04-11 17:16:49,894 INFO: Job Finished: Service Health Check - Completed in 0.20 seconds
+2025-04-11 17:16:49,895 INFO: Job "service_health_check (trigger: interval[0:04:00], next run at: 2025-04-11 17:20:49 EDT)" executed successfully
+2025-04-11 17:17:22,039 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:17:22,058 INFO: Job Finished: File Created Event - Completed in 0.02 seconds
+2025-04-11 17:17:22,064 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,065 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,068 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,068 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,069 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,071 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,073 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,076 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,081 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,081 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,082 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,084 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,086 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,092 INFO: Job Finished: File Modified Event - Completed in 0.01 seconds
+2025-04-11 17:17:22,093 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,093 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,094 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,095 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,095 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,097 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,098 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,099 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,100 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,101 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,104 INFO: Job Started: File Moved Event - Handle file moved event - File type: File
+2025-04-11 17:17:22,105 INFO: Job Finished: File Moved Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,106 INFO: Job Started: Backup Config - Backup configuration file on change - File type: Config
+2025-04-11 17:17:22,106 INFO: Job Finished: Backup Config - Completed in 0.00 seconds
+2025-04-11 17:17:22,107 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,109 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,110 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,110 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,111 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,112 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,113 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:22,118 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:22,119 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:22,119 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:22,119 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:22,121 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:49,567 INFO: Running job "run_system_monitor (trigger: interval[0:05:00], next run at: 2025-04-11 17:22:49 EDT)" (scheduled at 2025-04-11 17:17:49.373439-04:00)
+2025-04-11 17:17:49,572 INFO: Running job "ping_test (trigger: interval[0:05:00], next run at: 2025-04-11 17:22:49 EDT)" (scheduled at 2025-04-11 17:17:49.381719-04:00)
+2025-04-11 17:17:49,579 INFO: Job Started: System Monitor - Monitor CPU, memory, disk usage, and uptime - File type: N/A
+2025-04-11 17:17:49,580 INFO: Job Started: Ping Test - Test network connectivity by pinging critical servers - File type: N/A
+2025-04-11 17:17:50,627 INFO: Job Finished: System Monitor - Completed in 1.05 seconds
+2025-04-11 17:17:50,627 INFO: Job "run_system_monitor (trigger: interval[0:05:00], next run at: 2025-04-11 17:22:49 EDT)" executed successfully
+2025-04-11 17:17:51,680 INFO: Job Finished: Ping Test - Completed in 2.10 seconds
+2025-04-11 17:17:51,681 INFO: Job "ping_test (trigger: interval[0:05:00], next run at: 2025-04-11 17:22:49 EDT)" executed successfully
+2025-04-11 17:17:56,548 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:17:56,550 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:17:56,551 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:56,552 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:56,552 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:56,552 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:56,553 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:56,554 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:56,554 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:56,555 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:56,556 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:56,556 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:56,556 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:56,557 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:56,558 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:56,558 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:56,559 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:56,559 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:56,560 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:56,561 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,592 INFO: Job Started: File Deleted Event - Handle file deletion event - File type: File
+2025-04-11 17:17:59,594 INFO: Job Finished: File Deleted Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,597 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:59,599 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,603 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:59,603 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,605 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:59,607 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,608 INFO: Job Started: File Created Event - Handle file creation event - File type: File
+2025-04-11 17:17:59,609 INFO: Job Finished: File Created Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,610 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:59,611 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,611 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:59,612 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,612 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:59,613 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,614 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:59,615 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,616 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:59,616 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,617 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:59,619 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,620 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:17:59,621 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:17:59,622 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:17:59,622 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:17:59,623 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:17:59,624 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:18:08,592 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:18:08,593 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:18:08,594 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:18:08,595 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:18:08,596 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:18:08,596 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:18:08,597 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:18:08,598 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:18:08,599 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:18:08,599 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:18:08,600 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:18:08,600 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:18:10,359 INFO: Job Started: File Deleted Event - Handle file deletion event - File type: File
+2025-04-11 17:18:10,360 INFO: Job Finished: File Deleted Event - Completed in 0.00 seconds
+2025-04-11 17:18:10,363 INFO: Job Started: File Modified Event - Handle file modification event - File type: File
+2025-04-11 17:18:10,364 INFO: Job Finished: File Modified Event - Completed in 0.00 seconds
+2025-04-11 17:18:10,376 INFO: Job Started: Config Change Alert - Alert on critical configuration file change - File type: Config
+2025-04-11 17:18:10,376 INFO: Job Finished: Config Change Alert - Completed in 0.00 seconds
+2025-04-11 17:18:10,377 INFO: Job Started: Keyword Alert - Scan log file change for specific keyword - File type: Log
+2025-04-11 17:18:10,377 INFO: Job Finished: Keyword Alert - Completed in 0.00 seconds
+2025-04-11 17:18:49,532 INFO: Running job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:20:49 EDT)" (scheduled at 2025-04-11 17:18:49.381926-04:00)
+2025-04-11 17:18:49,559 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-11 17:18:49,577 INFO: Job Finished: Memory Leak Detector - Completed in 0.02 seconds
+2025-04-11 17:18:49,580 INFO: Job "memory_leak_detector (trigger: interval[0:02:00], next run at: 2025-04-11 17:20:49 EDT)" executed successfully
+2025-04-11 17:19:54,315 INFO: Scheduler has been shut down

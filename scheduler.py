@@ -40,7 +40,7 @@ def main():
     # 1. File watcher for filesystem events (using watchdog)
     watcher_thread = threading.Thread(
         target=event_based.start_file_watcher,
-        args=("/home/mozelle/cron_project/watched_directory",),  # Update path as needed
+        args=("watched_directory",),  # Update path as needed
         daemon=True
     )
     watcher_thread.start()
@@ -48,7 +48,7 @@ def main():
     # 2. Poll directory changes (using os.listdir)
     dir_poll_thread = threading.Thread(
         target=event_based.poll_directory_changes,
-        args=("/home/mozelle/cron_project/watched_directory", 10),  # (directory, polling interval in seconds)
+        args=("watched_directory", 10),  # (directory, polling interval in seconds)
         daemon=True
     )
     dir_poll_thread.start()
@@ -56,7 +56,7 @@ def main():
     # 3. Poll file attribute changes (using os.stat)
     file_poll_thread = threading.Thread(
         target=event_based.poll_file_attribute_changes,
-        args=("/home/mozelle/cron_project/watched_directory.permanent.txt", 10),  # (file path, polling interval)
+        args=("/home/mozelle/cron_project/watched_directory.permanent.txt", 10),  # (file path, polling interval) #UPDATE
         daemon=True
     )
     file_poll_thread.start()
