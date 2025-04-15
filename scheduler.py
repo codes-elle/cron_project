@@ -1,10 +1,14 @@
 import time
+import os
 import threading
 from apscheduler.schedulers.background import BackgroundScheduler
 from jobs import time_based, event_based
 
+#Function to listen for manual event input from the terminal
 def event_listener():
-    """Listen for event input and trigger event-based jobs."""
+    """Continuously listens for user input on the terminal.
+    If user types an event command, it triggers an event-based job in a new thread.
+    Type 'quit' to stop the listener """
     while True:
         event = input("Enter event (or 'quit' to exit event listener): ")
         if event.lower() == 'quit':
@@ -16,7 +20,12 @@ def event_listener():
             threading.Thread(target=event_based.run_event_job, args=(event,), daemon=True).start()
 
 def main():
+    #Create an instance of the BackgroundScheduler.
     scheduler = BackgroundScheduler()
+
+    """Schedule time-based jobs with various triggers. 
+    Interval trigger for jobs that you want to run every x minutes, hours, etc. 
+    Cron trigger for jobs that you want to run at a specified date/time interval ex: Run every Monday at 2AM or run everyday at 4:30AM"""
     scheduler.add_job(time_based.run_system_monitor, 'interval', minutes=5, id='run_system_monitor')
     scheduler.add_job(time_based.daily_log_rotation, 'cron', hour=0, minute=0, id='daily_log_rotation')
     scheduler.add_job(time_based.automated_backup, 'cron', hour=1, id='automated_backup')
@@ -32,20 +41,24 @@ def main():
     scheduler.add_job(time_based.log_file_analysis, 'cron', hour=5, minute=15, id='log_file_analysis')
     scheduler.add_job(time_based.service_health_check, 'interval', minutes=4, id='service_health_check')
     scheduler.add_job(time_based.temperature_monitoring, 'interval', minutes=15, id='temperature_monitoring')
+
+    #Start scheduler so jobs can begin executing.
     scheduler.start()
+    print("Scheduler started with time-based jobs.")
 
     # -------------------------------
     # Start Event-Based Threads
     # -------------------------------
-    # 1. File watcher for filesystem events (using watchdog)
+
+    # 1. Start file watcher thread that monitors file system events
     watcher_thread = threading.Thread(
         target=event_based.start_file_watcher,
-        args=("watched_directory",),  # Update path as needed
+        args=("watched_directory",),
         daemon=True
     )
     watcher_thread.start()
 
-    # 2. Poll directory changes (using os.listdir)
+    # 2. Start a thread to poll directory changes using os.listdir
     dir_poll_thread = threading.Thread(
         target=event_based.poll_directory_changes,
         args=("watched_directory", 10),  # (directory, polling interval in seconds)
@@ -53,15 +66,15 @@ def main():
     )
     dir_poll_thread.start()
 
-    # 3. Poll file attribute changes (using os.stat)
+    # 3. Start a thread to poll file attribute changes for a specific file using os.stat
     file_poll_thread = threading.Thread(
         target=event_based.poll_file_attribute_changes,
-        args=("/home/mozelle/cron_project/watched_directory.permanent.txt", 10),  # (file path, polling interval) #UPDATE
+        args=("/home/mozelle/cron_project/watched_directory.permanent.txt", 10),  # (file path, polling interval)
         daemon=True
     )
     file_poll_thread.start()
 
-    # 4. Poll disk space (using os.statvfs)
+    # 4. Start a thread to poll disk space on the root mount using os.statvfs
     disk_poll_thread = threading.Thread(
         target=event_based.poll_disk_space,
         args=("/", 10, 30),  # (mount point, threshold percentage, polling interval)
@@ -69,25 +82,24 @@ def main():
     )
     disk_poll_thread.start()
 
-    # 5. Poll environment variable changes
+    # 5. Start a thread to poll environment variable changes
     env_poll_thread = threading.Thread(
         target=event_based.poll_env_variable_change,
         args=("MY_VAR", 10),  # (environment variable name, polling interval)
         daemon=True
     )
     env_poll_thread.start()
-
     print("All event-based threads have been started.")
 
     # -------------------------------
     # Start Manual Event Listener
     # -------------------------------
     try:
-        event_listener()
+        event_listener() #Runs manual event input listener
     except (KeyboardInterrupt, SystemExit):
         pass
     finally:
-        scheduler.shutdown()
+        scheduler.shutdown() #Cleanly shutdown the scheduler on exit
         print("Scheduler shutdown.")
 
 

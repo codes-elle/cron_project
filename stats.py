@@ -2,12 +2,16 @@ import json
 import threading
 import os
 
+#The file where stats are stored. Will be created in project root
 STATS_FILE = "stats.json"
+
+#A lock to make sure file operations are thread-safe
 lock = threading.Lock()
 
 
 def initialize_stats():
-    """Initialize the stats file if it does not exist."""
+    """Initialize the stats file if it does not exist.
+    Function creates a baseline for all job metrics."""
     if not os.path.exists("stats.json"):
         stats = {
             # Time-based jobs
@@ -52,6 +56,8 @@ def initialize_stats():
 def update_stat(job_type, duration=0.0, error=False):
     """
     Update statistics for a given job.
+    This function opens the stats.json file, updates the run count, duration,
+    and increments the error count if error is True.
 
     Args:
         job_type (str): The key for the job in the stats structure.
@@ -64,6 +70,7 @@ def update_stat(job_type, duration=0.0, error=False):
                 stats = json.load(f)
         except Exception as e:
             stats = {}
+        #Update or create the key for the given job_type
         if job_type in stats:
             stats[job_type]["runs"] += 1
             stats[job_type]["total_duration"] += duration
@@ -76,15 +83,14 @@ def update_stat(job_type, duration=0.0, error=False):
 
 
 def get_stats():
-    """Return the current statistics."""
+    """Return the current statistics from the stats.json file.
+    If the file doesn't exist, it initializes it first"""
     with lock:
         if not os.path.exists(STATS_FILE):
             initialize_stats()
         with open(STATS_FILE, "r") as f:
             stats = json.load(f)
     return stats
-
-
 
 if __name__ == "__main__":
     initialize_stats()
