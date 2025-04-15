@@ -8,8 +8,8 @@ from stats import update_stat
 logger = logging.getLogger("cron_project")
 logger.setLevel(logging.INFO)
 
-# Set up a TimedRotatingFileHandler: rotate at midnight, keep 3 days worth of logs (change as needed).
-handler = TimedRotatingFileHandler("job_logs.log", when="midnight", interval=1, backupCount=3)
+# Set up a TimedRotatingFileHandler: rotate at midnight, keep 1 days worth of logs (change as needed).
+handler = TimedRotatingFileHandler("job_logs.log", when="midnight", interval=1, backupCount=1)
 formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
