@@ -1,6 +1,8 @@
 # Cron Project
 
-**Cron Project** is a Python-based scheduler that mimics the functionality of the classic Unix/Linux cron daemon. It supports both time-based scheduling (using APScheduler) and event-based triggers (using watchdog and os polling), and it provides real-time statistical monitoring with live dashboards built using both Flask and Streamlit.
+**Cron Project** is a robust Python-based scheduler that extends the functionality of the traditional Unix/Linux cron daemon. It supports both time-based scheduling via APScheduler and event-driven triggers (using Watchdog and os polling). Additionally, it records execution metrics in a centralized `stats.json` file and provides real-time, interactive visualizations through a Streamlit dashboard.
+
+---
 
 ## Table of Contents
 
@@ -10,222 +12,186 @@
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
-  - [A. Running the Scheduler](#a-running-the-scheduler)
-  - [B. Running the Live Dashboard](#b-running-the-live-dashboard)
-- [Running as a Background Service](#running-as-a-background-service)
+  - [Scheduler & Jobs](#scheduler--jobs)
+  - [Live Dashboard](#live-dashboard)
+  - [Background Service Options](#background-service-options)
+- [Updates and Improvements](#updates-and-improvements)
 - [Contributing](#contributing)
 - [License](#license)
+
+---
 
 ## Features
 
 - **Time-Based Tasks:**  
-  Schedule tasks using cron-like expressions or fixed intervals. The project leverages APScheduler to manage these tasks.
-  
+  Schedule tasks with cron-like expressions and fixed intervals using APScheduler.
 - **Event-Based Triggers:**  
-  React to file system changes (using watchdog) and poll directories, file attributes, disk space, and environment variables using Python's os module.
-  
-- **Logging & Rotation:**  
-  Uses Python's logging module with a `RotatingFileHandler` to automatically rotate and archive logs (stored in `job_logs.log`).
-
+  React to file system events with Watchdog and monitor directories, file attributes, disk space, and environment variables using polling functions.
+- **Logging & Log Rotation:**  
+  A robust logging system uses TimedRotatingFileHandler to automatically archive logs (stored in `job_logs.log`) daily.
 - **Runtime Statistics:**  
-  Tracks key metrics (e.g., total runs, success vs. failure, execution duration, error counts) which are stored in a `stats.json` file in the project root.
+  Each job logs key metrics—run counts, execution durations, and error counts—to a single `stats.json` file.
+- **Live Dashboard:**  
+  An interactive Streamlit dashboard displays real-time performance data with multiple charts arranged in a grid layout.
+- **Concurrency:**  
+  Using Python threading, both time-based and event-driven tasks run concurrently.
+- **Extensibility:**  
+  The modular design allows for easy integration of future features like priority scheduling or distributed job coordination.
 
-- **Live Dashboards:**  
-  Visualize key metrics via a Flask-based dashboard or a Streamlit-based live dashboard that displays multiple charts (bar, pie, etc.) in a grid layout.
-
-- **Concurrent Execution:**  
-  Implements multi-threading for both time-based and event-based tasks, ensuring that scheduled and event-triggered jobs run concurrently.
+---
 
 ## System Architecture & Technologies
 
 ### Hardware
+
 - **Target Environment:**  
-  Designed to run on Unix/Linux systems (e.g., Ubuntu), suitable for servers, desktops, or virtual machines.
+  Designed to run on Unix/Linux systems (e.g., Ubuntu), suitable for desktops, servers, or virtual machines.
 
 ### Software Libraries / APIs
-- **APScheduler:** For scheduling time-based tasks with cron-like and interval triggers.
-- **Watchdog:** For monitoring file system events in real-time.
-- **psutil:** For retrieving system resource usage (CPU, memory, disk, sensors).
-- **Flask:** For creating a simple web-based dashboard.
-- **Streamlit:** For building a live, interactive dashboard with real-time updating charts.
-- **Plotly:** For generating interactive charts and graphs used in the Streamlit dashboard.
-- **Python Logging Module:** For recording job execution details with automatic log rotation.
 
+- **APScheduler:** Manages time-based task scheduling.
+- **Watchdog:** Monitors file system events in real time.
+- **psutil:** Retrieves system metrics (CPU, memory, disk usage, etc.).
+- **Streamlit & Plotly:** Create interactive, real-time dashboards.
+- **Python Logging Module:** Configured with TimedRotatingFileHandler for automatic log rotation.
+  
 ### Programming Languages / Platforms
-- **Language:** Python 3.x
-- **Platforms:** Developed and tested on Ubuntu Linux; runs as a command-line tool, service, or within containers.
 
-### Algorithms & System Design
-- **Scheduling:**  
-  Time-based jobs are scheduled using APScheduler’s cron and interval methods, which closely mimic crontab behavior.
-  
-- **Event Detection:**  
-  Event-based triggers are implemented using both:
-  - Real-time file system monitoring (via Watchdog)
-  - Periodic polling (using the os module functions such as os.listdir, os.stat, os.statvfs, os.environ)
-  
-- **Concurrency:**  
-  Python threading enables simultaneous execution of multiple jobs.
-  
-- **Statistics & Logging:**  
-  Execution metrics are recorded in a JSON file. The logging is managed by a rotating file handler, ensuring that logs remain at a manageable size.
-  
-- **Dashboard Integration:**  
-  Live dashboards (both Flask and Streamlit) retrieve and display these metrics in real time using charts and tables for immediate insight.
+- **Language:** Python 3.x  
+- **Platform:** Developed and tested on Ubuntu Linux.
+- **Execution:** The project can run as a standalone script or background service, and it can be containerized via Docker for production.
+
+### System Design
+
+The project consists of:
+- A scheduler that integrates both time-based and event-driven tasks.
+- A statistics system that aggregates performance data into `stats.json`.
+- A logging system that archives logs daily.
+- A live dashboard (using Streamlit) that displays key performance metrics and analyses.
+
+---
 
 ## Quantitative Measurements and Analyses
 
-The project tracks and analyzes a range of metrics, including:
+The project tracks numerous performance metrics:
+1. **Total Runs per Job:** Overall execution counts.
+2. **Success vs. Failure Rates:** The ratio of successful runs to errors.
+3. **Execution Duration:** Average, minimum, and maximum runtime for each job.
+4. **Resource Usage:** Live metrics of CPU, memory, and disk usage.
+5. **Frequency of Execution:** How often each job is executed.
+6. **Error Trends:** Number and types of errors per job.
+7. **Job Category Totals:** Aggregated metrics for time-based vs. event-based tasks.
+8. **Event-Specific Metrics:** Counts of specific file events (creation, modification, deletion, moves).
+9. **Downtime/Recovery Rates:** Frequency of job restarts or recoveries.
+10. **Statistical Analysis:** Derived metrics such as standard deviations and trends over time.
 
-1. **Total Runs per Job:**  
-   The total number of times each job has been executed.
+These metrics are used to generate detailed visualizations in the live dashboard.
 
-2. **Success vs. Failure Rates:**  
-   The number of successful runs versus errors.
-
-3. **Execution Duration:**  
-   The average (and optionally minimum/maximum) execution time per job.
-
-4. **Resource Usage:**  
-   Live measurements of CPU, memory, and disk usage during job execution.
-
-5. **Frequency of Occurrence:**  
-   How often each job runs (e.g., per minute, hour, day).
-
-6. **Error Trends:**  
-   The frequency and type of errors encountered during execution.
-
-7. **Job Category Totals:**  
-   Aggregated run counts for time-based jobs compared to event-based jobs.
-
-8. **Event-Specific Metrics:**  
-   Detailed counts of particular events (file created, file modified, file deleted, file moved, etc.).
-
-9. **Downtime/Recovery Rates:**  
-   Metrics on job restarts or how often jobs recover from failures.
-
-10. **Statistical Analyses:**  
-    Additional statistical computations such as standard deviation, trend analysis, and performance metrics.
+---
 
 ## Project Structure
 
 ```
 cron_project/
-├── dashboard/
-│   ├── __init__.py
-│   ├── app.py                # Flask-based dashboard (optional)
-│   └── templates/
-│       └── dashboard.html    # HTML template for the Flask dashboard
-├── dashboard_streamlit.py    # Streamlit live dashboard
+├── dashboard_streamlit.py    # Streamlit live dashboard for interactive visualization
 ├── jobs/
 │   ├── __init__.py
-│   ├── time_based.py         # Time-based job definitions
-│   └── event_based.py        # Event-based job definitions & polling functions
-├── job_logger.py             # Logging configuration with RotatingFileHandler
-├── scheduler.py              # Main scheduler that starts all jobs and event-based threads
-├── rollback_scheduler.py     # Placeholder for rollback scheduling functionality
+│   ├── time_based.py         # Definitions of time-based jobs
+│   └── event_based.py        # Definitions of event-based jobs & polling functions
+├── job_logger.py             # Logging configuration with TimedRotatingFileHandler
+├── scheduler.py              # Main scheduler that launches all tasks and threads
+├── rollback_scheduler.py     # Optional; placeholder for rollback functionality
 ├── stats.py                  # Manages runtime statistics stored in stats.json
-└── requirements.txt          # Python dependencies
+└── requirements.txt          # List of Python dependencies
 ```
+
+*Note: The Flask dashboard has been removed, so only the Streamlit dashboard is used.*
+
+---
 
 ## Installation
 
 1. **Clone the Repository:**
-
    ```bash
    git clone https://github.com/codes-elle/cron_project.git
    cd cron_project
    ```
-
 2. **Activate Your Virtual Environment:**
-
-   If you’re using a virtual environment (e.g., `.venv`):
-
    ```bash
    source .venv/bin/activate
    ```
-
 3. **Install Dependencies:**
-
    ```bash
    pip install -r requirements.txt
    ```
-
 4. **Initialize the Statistics File:**
-
-   Run this once to create a fresh `stats.json` in the project root:
-
+   Run once to create a fresh `stats.json` in the project root:
    ```bash
    python -c "from stats import initialize_stats; initialize_stats()"
    ```
-
 5. **Prepare the Watched Directory:**
-
-   Create the directory used for file system event monitoring:
-
    ```bash
    mkdir -p watched_directory
    ```
 
+---
+
 ## Running the Project
 
-### A. Run the Scheduler
+### Scheduler & Jobs
 
-The scheduler launches time-based jobs (using APScheduler) and starts event-based threads (for file system monitoring and polling).
-
+To start the scheduler—which initiates time-based jobs via APScheduler and launches event-based threads (file watcher, polling functions, and manual event listener)—run:
 ```bash
 python scheduler.py
 ```
+This command will output log messages and update job metrics in `stats.json` while running concurrently.
 
-This command starts the scheduler and prints log messages as tasks and event-based functions execute.
+### Live Dashboard
 
-### B. Run the Live Dashboard
+#### Streamlit Dashboard
 
-You have two options:
+From the project root, run:
+```bash
+streamlit run dashboard_streamlit.py
+```
+Then, open your browser and visit [http://localhost:8501](http://localhost:8501) to view the live, interactive dashboard with charts and tables that visualize your project’s metrics.
 
-#### Option 1: Flask-Based Dashboard
+### Background Service Options
 
-1. **Navigate to the Dashboard Directory:**
+To ensure that your time-based tasks continue running after you close your terminal:
+- **Systemd Service:**  
+  Create a systemd unit file for `scheduler.py` so that it starts on system boot.
+- **Tmux/Screen/Nohup:**  
+  Run `scheduler.py` in a detached session using `tmux`, `screen`, or `nohup`.
+- **Docker:**  
+  Containerize your project and run it in detached mode for production deployment.
 
-   ```bash
-   cd dashboard
-   ```
+---
 
-2. **Run the Flask App:**
+## Updates and Improvements
 
-   ```bash
-   python app.py
-   ```
+Recent improvements include:
+- **Consolidated Statistics:**  
+  Duplicate keys have been merged in `stats.json`, ensuring each measurement is tracked only once.
+- **Enhanced Log Rotation:**  
+  The logging system uses TimedRotatingFileHandler to rotate logs daily.
+- **Path Configuration:**  
+  Absolute paths have been replaced with relative paths (using `os.path.join(os.getcwd(), ...)`) for improved portability.
+- **Dashboard Upgrades:**  
+  The project now includes a fully featured Streamlit dashboard that displays all key quantitative measurements in an interactive grid layout.
+- **Optimized Concurrency:**  
+  Time-based and event-based tasks run in separate threads for higher performance and reliability.
 
-3. **Access the Dashboard:**
-
-   Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
-
-#### Option 2: Streamlit Dashboard
-
-1. **From the Project Root, Run:**
-
-   ```bash
-   streamlit run dashboard_streamlit.py
-   ```
-
-2. **Access the Dashboard:**
-
-   Open [http://localhost:8501](http://localhost:8501) in your browser.
-
-## Running as a Background Service
-
-To run your tasks continuously even after closing your terminal, you can:
-- **Create a systemd service:** Write a unit file to launch your scheduler on boot.
-- **Use nohup or tmux/screen:** Run the scheduler in the background.
-- **Containerize with Docker:** Run your application in detached mode.
+---
 
 ## Contributing
 
-Contributions, improvements, and bug fixes are welcome!  
-Please open issues or submit pull requests to discuss changes.
+Contributions, feature requests, and bug fixes are welcome! Please fork the repository and submit pull requests, or open issues to discuss changes.
+
+---
 
 ## License
 
-```
+[Include your license information here.]
 
+---
