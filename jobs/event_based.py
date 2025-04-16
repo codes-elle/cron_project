@@ -13,7 +13,7 @@ from job_logger import log_job
 @log_job("Generic Event", "Handle a generic event", file_type="N/A")
 def run_event_job(event):
     """
-    Generic event handler that logs the occurence of an event
+    Generic event handler that logs the occurrence of an event
     """
     print(f"[{datetime.datetime.now()}] Running event-based job for event: {event}")
     update_stat("event_based_generic")
