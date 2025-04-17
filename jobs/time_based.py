@@ -219,4 +219,4 @@ def temperature_monitoring():
 # 16. Intentional Error for demo purposes
 @log_job("time_based_intentional_error", "Fails intentionally", file_type="N/A")
 def force_error():
-    raise ValueError("This is a test error for demo purposes!")
+    raise ValueError("This is a test error for demo purposes.")

@@ -266,3 +266,11 @@
 2025-04-17 18:44:55,662 ERROR: Job Error: time_based_intentional_error - Error: This is a test error for demo purposes! - Took 0.00 seconds
 2025-04-17 18:45:25,660 INFO: Job Started: time_based_intentional_error - Fails intentionally - File type: N/A
 2025-04-17 18:45:25,661 ERROR: Job Error: time_based_intentional_error - Error: This is a test error for demo purposes! - Took 0.00 seconds
+2025-04-17 18:45:55,661 INFO: Job Started: Memory Leak Detector - Detect if memory usage exceeds a threshold - File type: N/A
+2025-04-17 18:45:55,661 INFO: Job Started: time_based_intentional_error - Fails intentionally - File type: N/A
+2025-04-17 18:45:55,662 ERROR: Job Error: time_based_intentional_error - Error: This is a test error for demo purposes! - Took 0.00 seconds
+2025-04-17 18:45:55,665 INFO: Job Finished: Memory Leak Detector - Completed in 0.00 seconds
+2025-04-17 18:46:25,661 INFO: Job Started: time_based_intentional_error - Fails intentionally - File type: N/A
+2025-04-17 18:46:25,661 ERROR: Job Error: time_based_intentional_error - Error: This is a test error for demo purposes! - Took 0.00 seconds
+2025-04-17 18:46:55,660 INFO: Job Started: time_based_intentional_error - Fails intentionally - File type: N/A
+2025-04-17 18:46:55,660 ERROR: Job Error: time_based_intentional_error - Error: This is a test error for demo purposes! - Took 0.00 seconds
