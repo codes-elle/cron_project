@@ -42,6 +42,7 @@ def main():
     scheduler.add_job(time_based.log_file_analysis, 'cron', hour=5, minute=15, id='log_file_analysis')
     scheduler.add_job(time_based.service_health_check, 'interval', minutes=4, id='service_health_check')
     scheduler.add_job(time_based.temperature_monitoring, 'interval', minutes=15, id='temperature_monitoring')
+    scheduler.add_job(time_based.force_error, trigger='interval', seconds=30, id='force_error_job')
 
     #Start scheduler so jobs can begin executing.
     scheduler.start()
