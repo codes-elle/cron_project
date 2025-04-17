@@ -9,11 +9,16 @@ logger = logging.getLogger("cron_project")
 logger.setLevel(logging.INFO)
 
 # Set up a TimedRotatingFileHandler: rotate at midnight, keep 1 days worth of logs (change as needed).
-handler = TimedRotatingFileHandler("job_logs.log", when="midnight", interval=1, backupCount=1)
-formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
+if not any(isinstance(h, TimedRotatingFileHandler) for h in logger.handlers):
+    handler = TimedRotatingFileHandler(
+        "job_logs.log",
+        when="midnight",
+        interval=1,
+        backupCount=7
+    )
+    formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
 def log_job(job_key, description, file_type=None):
     """

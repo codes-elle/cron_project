@@ -81,6 +81,17 @@ def update_stat(job_type, duration=0.0, error=False):
         with open(STATS_FILE, "w") as f:
             json.dump(stats, f)
 
+    def prune_stats(max_entries=500): #prevent infinite growth
+        """ Keep only the most recent max_entries keys or timestamps """
+        with lock:
+            stats = json.load(open(STATS_FILE))
+            if len(stats) > max_entries:
+                # example: sort by timestamp key if you stored timestamps
+                keys_to_keep = sorted(stats, key=lambda k: stats[k]['last_run_ts'], reverse=True)[:max_entries]
+                stats = {k: stats[k] for k in keys_to_keep}
+                with open(STATS_FILE, 'w') as f:
+                    json.dump(stats, f)
+
 
 def get_stats():
     """Return the current statistics from the stats.json file.

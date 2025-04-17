@@ -1,6 +1,7 @@
 import datetime
 import time
 import os
+import gc
 import subprocess
 import shutil
 import psutil
@@ -207,12 +208,9 @@ def backup_config_on_change(event):
 #----------------------------------------------
 #Polling Functions using Python's 'os' module
 #----------------------------------------------
-@log_job("os_directory_change", "Detect changes in directory listing using os.listdir", file_type="Directory")
+@log_job("os_directory_change", "Detect changes in directory listing", file_type="Directory")
 def poll_directory_changes(directory_path, interval=10):
-    """
-    Poll a directory for changes in its file listing.
-    If files are added or removed, log the changes and update stats.
-    """
+    # Only store one snapshot
     previous_listing = set(os.listdir(directory_path))
     while True:
         time.sleep(interval)
@@ -220,9 +218,12 @@ def poll_directory_changes(directory_path, interval=10):
         added = current_listing - previous_listing
         removed = previous_listing - current_listing
         if added or removed:
-            print(f"Directory changes in {directory_path}. Added: {added}, Removed: {removed}")
+            print(f"Changes: {added} / {removed}")
             update_stat("os_directory_change")
+            # Release memory of old set
             previous_listing = current_listing
+            # Force garbage collection periodically
+            gc.collect()
 
 @log_job("os_file_attribute_change", "Monitor file attribute changes using os.stat", file_type="File")
 def poll_file_attribute_changes(file_path, interval=10):

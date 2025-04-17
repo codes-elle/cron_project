@@ -1,10 +1,27 @@
 import streamlit as st
 import pandas as pd
 import json
+import networkx as nx
 #import time
 import plotly.express as px
 import psutil
 from streamlit_autorefresh import st_autorefresh
+
+#Caching, Streamlit avoids recomputing graph layout on each rerun
+@st.cache_data(ttl=60)
+def build_interaction_graph():
+    G = nx.DiGraph()
+    G.add_edges_from([
+        ("scheduler.py", "jobs/time_based.py"),
+        ("scheduler.py", "jobs/event_based.py"),
+        ("jobs/time_based.py", "job_logger.py"),
+        ("jobs/event_based.py", "job_logger.py"),
+        ("job_logger.py", "stats.py"),
+        ("stats.py", "dashboard_streamlit.py")
+    ])
+    pos = nx.spring_layout(G, seed=42)
+    return G, pos
+
 st.set_page_config(layout="wide")
 
 # Automatically refresh the app every 30 seconds

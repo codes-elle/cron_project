@@ -1,5 +1,6 @@
 import time
 import os
+import streamlit as st
 import threading
 from apscheduler.schedulers.background import BackgroundScheduler
 from jobs import time_based, event_based
@@ -47,16 +48,18 @@ def main():
     print("Scheduler started with time-based jobs.")
 
     # -------------------------------
-    # Start Event-Based Threads
+    # Start Event-Based Threads (only once)
     # -------------------------------
 
     # 1. Start file watcher thread that monitors file system events
-    watcher_thread = threading.Thread(
-        target=event_based.start_file_watcher,
-        args=("watched_directory",),
-        daemon=True
-    )
-    watcher_thread.start()
+    if not hasattr(main, "threads_started"):
+        #File watcher
+        watcher_thread = threading.Thread(
+            target = event_based.start_file_watcher,
+            args = ("watched_directory",),
+            daemon = True
+        )
+        watcher_thread.start()
 
     # 2. Start a thread to poll directory changes using os.listdir
     dir_poll_thread = threading.Thread(
