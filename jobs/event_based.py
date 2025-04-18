@@ -2,7 +2,6 @@ import datetime
 import time
 import os
 import gc
-import subprocess
 import shutil
 import psutil
 from watchdog.observers import Observer
