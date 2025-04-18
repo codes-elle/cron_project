@@ -73,7 +73,7 @@ def main():
     # 3. Start a thread to poll file attribute changes for a specific file using os.stat
     file_poll_thread = threading.Thread(
         target=event_based.poll_file_attribute_changes,
-        args=("/home/mozelle/cron_project/watched_directory.permanent.txt", 10),  # (file path, polling interval)
+        args=("/home/mozelle/cron_project/watched_directory/permanent.txt", 10),  # (file path, polling interval)
         daemon=True
     )
     file_poll_thread.start()
